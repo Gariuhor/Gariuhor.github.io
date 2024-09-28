@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Sistema Operativo Básico</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="login-screen" class="screen">
+        <h1>Iniciar Sesión</h1>
+        <input type="text" id="username" placeholder="Nombre de usuario">
+        <input type="password" id="password" placeholder="Contraseña">
+        <button id="login-btn">Iniciar Sesión</button>
+    </div>
+    
+    <div id="main-screen" class="screen hidden">
+        <h1>Bienvenido, Gariuhor</h1>
+        <div class="apps">
+            <button onclick="openApp('calculator')">Calculadora</button>
+            <button onclick="openApp('notepad')">Bloc de Notas</button>
+            <button onclick="openApp('browser')">Navegador</button>
+            <button onclick="shutdown()">Apagar</button>
+        </div>
+    </div>
+
+    <div id="calculator" class="app hidden">
+        <h2>Calculadora</h2>
+        <input type="text" id="calc-input">
+        <button onclick="calculate()">Calcular</button>
+        <div id="calc-output"></div>
+        <button onclick="closeApp()">Cerrar</button>
+    </div>
+
+    <div id="notepad" class="app hidden">
+        <h2>Bloc de Notas</h2>
+        <textarea id="note-text" rows="10" cols="30"></textarea>
+        <button onclick="closeApp()">Cerrar</button>
+    </div>
+
+    <div id="browser" class="app hidden">
+        <h2>Navegador</h2>
+        <input type="text" id="url-input" placeholder="Escribe un link">
+        <button onclick="openLink()">Ir</button>
+        <button onclick="closeApp()">Cerrar</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
