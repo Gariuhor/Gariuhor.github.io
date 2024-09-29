@@ -1,4 +1,3 @@
-const GITHUB_TOKEN = 'YOUR_GITHUB_TOKEN';
 const REPO_OWNER = 'YOUR_GITHUB_USERNAME';
 const REPO_NAME = 'YOUR_REPOSITORY_NAME';
 const FILE_PATH = 'phrases.json';
@@ -6,7 +5,7 @@ const FILE_PATH = 'phrases.json';
 const getPhrases = async () => {
     const response = await fetch(`https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/${FILE_PATH}`, {
         headers: {
-            'Authorization': `token ${GITHUB_TOKEN}`
+            'Authorization': `token ${process.env.GH_TOKEN}`
         }
     });
     const data = await response.json();
@@ -17,7 +16,7 @@ const savePhrases = async (phrases) => {
     const response = await fetch(`https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/${FILE_PATH}`, {
         method: 'PUT',
         headers: {
-            'Authorization': `token ${GITHUB_TOKEN}`,
+            'Authorization': `token ${process.env.GH_TOKEN}`,
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
