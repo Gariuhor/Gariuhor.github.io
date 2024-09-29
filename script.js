@@ -1,11 +1,11 @@
 document.getElementById('login-btn').onclick = function() {
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
-    if (username === 'Gariuhor' && password === '12345678') {
+    if (username === '' && password === '') {
         document.getElementById('login-screen').classList.add('hidden');
         document.getElementById('main-screen').classList.remove('hidden');
     } else {
-        alert('Usuario o contraseña incorrectos.');
+        alert('Deja de estar cagando el palo piche pendejo.');
     }
 };
 
