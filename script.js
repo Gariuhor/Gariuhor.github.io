@@ -1,5 +1,5 @@
-const REPO_OWNER = 'YOUR_GITHUB_USERNAME';
-const REPO_NAME = 'YOUR_REPOSITORY_NAME';
+const REPO_OWNER = 'Gariuhor';
+const REPO_NAME = 'Gariuhor.github.io';
 const FILE_PATH = 'phrases.json';
 
 const getPhrases = async () => {
